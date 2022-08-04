@@ -31,6 +31,7 @@ const sess = {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static(path.join(__dirname, 'public')));
+  //built-in Express.js middleware function that can take all of the contents of a folder and serve them as static assets.
   
   app.use(require('./controllers/'));
   
