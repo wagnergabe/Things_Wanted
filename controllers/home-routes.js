@@ -8,18 +8,18 @@ router.get('/', async (req, res) => {
     const dbUserData = await User.findAll({
       include: [
         {
-          model: Painting,
-          attributes: ['filename', 'description'],
+          model: User,
+          attributes: ['username'],
         },
       ],
     });
 
-    const galleries = dbUserData.map((User) =>
+    const userDisplay = dbUserData.map((User) =>
       User.get({ plain: true })
     );
 
     res.render('homepage', {
-      galleries,
+      userDisplay,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
