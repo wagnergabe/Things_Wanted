@@ -1,6 +1,5 @@
-const User = require('./User');
-const Wish = require('./Wish');
-const Comment = require('./Comment');
+const Users = require("./Users");
+const Wishlist = require("./Wishlist");
 
 // User.hasMany(Wish, {
 //     foreignKey: 'user_list',
@@ -22,4 +21,4 @@ const Comment = require('./Comment');
 //     onDelete: 'CASCADE'
 // })
 
-module.exports = { User, Wish, Comment };
+module.exports = { Users, Wishlist };
