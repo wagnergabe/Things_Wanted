@@ -1,31 +1,21 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const {User, Comment, Wish } = require('../models');
+const { Users , Wishlist } = require('../models');
 
-// get all posts for homepage
-router.get('/', async (req, res) => {
-  try {
-    const dbUserData = await User.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
 
-    const userDisplay = dbUserData.map((User) =>
-      User.get({ plain: true })
-    );
+router.get('/',  (req, res) => {
+  res.render('homepage')
+})
 
-    res.render('homepage', {
-      userDisplay,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+
+// Login route
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
   }
+  // Otherwise, render the 'login' template
+  res.render('login');
 });
 
 module.exports = router;
