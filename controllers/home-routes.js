@@ -1,10 +1,20 @@
 const router = require('express').Router();
 const { Users , Wishlist } = require('../models');
+const withAuth = require('../utils/auth');
+
 
 
 router.get('/',  (req, res) => {
-  res.render('homepage')
+  res.render('homepage', {
+    loggedIn: req.session.loggedIn,
+  })
 })
+
+// Routes for wishlist
+
+router.get("/wishlist", function (req, res) {
+  res.render("partials/wishlist");
+});
 
 
 // Login route
