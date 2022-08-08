@@ -3,15 +3,14 @@
         <div class="form-row">
             <div class="col-md-6">
                 <label id = "inputWishListName">Wishlist Name:</label>
-                <input type="text" class="form-control" id="wishListName" placeholder="Ex: My Birthday Wishlist" />
+                <input type="text" class="form-control" id="wishListName" name="wishListName" placeholder="Ex: My Birthday Wishlist" />
             </div>
         </div>
-
 
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="inputEvent">Event:</label>
-                <select id="inputEvent" class="form-row">
+                <select id="inputEvent" class="form-row" name="inputEvent">
                     <option selected></option>
                     <option>Birthday</option>
                     <option>Wedding</option>
@@ -46,3 +45,10 @@
         <br>
         <hr>
         </div>
+        <button type ="submit" id = "wish-form" class ="btn">
+            Save Gift!
+        </button>
+        </form>
+</div>
+
+<script src ='/public/js/add-wishlist.js'></script>

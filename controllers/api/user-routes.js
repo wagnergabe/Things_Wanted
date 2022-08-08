@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models');
-const { Wishlist} = require('../../models');
+const sequelize = require('../../config/connection')
+const { User, Wishlist } = require('../../models');
 const db = require("../../models")
 
 // CREATE new user
