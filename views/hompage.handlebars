@@ -1,7 +1,13 @@
-<ul class="post-list">
-    {{#each posts as |post|}}
+<ol class="wish-list">  
     <li>
-        {{> post-info post }}
+        <article class="wish">
+            <div class="title">
+                {{#each wish as |wish|}}
+                <li>
+                    {{> wish-info wish }}
+                </li>
+                {{/each}}
+               </div> 
+        </article>
     </li>
-    {{/each}}
-</ul>
+</ol>
