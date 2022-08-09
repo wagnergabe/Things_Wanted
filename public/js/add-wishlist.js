@@ -26,7 +26,7 @@ if (response.ok) {
 } else {
   alert(response.statusText)
 }
-}
+};
 
   document.querySelector('.gift-form').addEventListener('submit', createWishlistHandler);
    
