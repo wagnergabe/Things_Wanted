@@ -15,7 +15,7 @@ Wishlist.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    event: {
+    event_name: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
