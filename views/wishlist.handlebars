@@ -1,8 +1,8 @@
-<article class = 'post'>
-    <form class="wishList">
+<section class = 'post'>
+    <form class="wishList-form">
         <div class="form-row">
             <div class="col-md-6">
-                <label id = "inputWishListName">Wishlist Name:</label>
+                <label for = "inputWishListName">Wishlist Name:</label>
                 <input type="text" class="form-control" id="wishListName" name="wishListName" placeholder="Ex: My Birthday Wishlist" />
             </div>
         </div>
@@ -21,18 +21,18 @@
             </div>
             <div class="col-md-8">
                 <label for="inputItemName">Item Name:</label>
-                <input type="text" class="form-control" id="itemName"/>
+                <input type="text" class="form-control" id="itemName" name = "itemName">
             </div>
         </div>
         <div class="form-group">
             <label for="inputCategory">Category</label>
-            <input type="text" class="form-control" id="CategoryName" />
+            <input type="text" class="form-control" id="CategoryName" name="categoryName" />
         </div>
 
         <div class="form-row">
         <div class="col-md-2">
             <label for="URL">URL address for Item</label>
-            <input type="text" class="form-control" id="URLname" />
+            <input type="text" class="form-control" id="URLname" name ="URLname" />
         </div>
 
         <button type="submit" id="addItem" class="btn">Add Another Item</button>
@@ -45,10 +45,10 @@
         <br>
         <hr>
         </div>
-        <button type ="submit" id = "wish-form" class ="btn">
-            Save Gift!
-        </button>
-        </form>
-</div>
+  <div>
+    <button type="submit" class="btn">Create</button>
+  </div>
+</form>
+</section>
 
-<script src ="js/add-wishlist.js"></script>
+<script src ="/public/javascript/add-wishlist.js"></script>
