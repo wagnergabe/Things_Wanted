@@ -1,13 +1,7 @@
 const router = require('express').Router();
-const { Users , Wishlist } = require('../models');
+const { User , Wishlist } = require('../models');
+const sequelize = require('../config/connection')
 const withAuth = require('../utils/auth');
-
-var express = require('express');
-var bodyParser = require ('body-parser');
-const { Post } = require('../../../../../Downloads/14.5/models');
-var app = express();
-
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 router.get('/',  (req, res) => {
@@ -15,7 +9,6 @@ router.get('/',  (req, res) => {
     loggedIn: req.session.loggedIn,
   })
 })
-
 
 // Login route
 router.get('/login', (req, res) => {

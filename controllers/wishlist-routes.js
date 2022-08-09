@@ -1,11 +1,15 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Users, Wishlist } = require('../models');
+const { User, Wishlist } = require('../models');
 
 router.get('/', (req, res) => {
-    console.log ('Now entering Wishlist Creater')
-res.render('wishlist')
-})
-
+    Wishlist.findAll()
+        .then(dbWishlistData => console.log(dbWishlistData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+        res.render('wishlist')
+});
 
 module.exports = router;

@@ -34,7 +34,7 @@ Wishlist.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "wishlist",
+    modelName: 'wishlist',
   }
 );
 

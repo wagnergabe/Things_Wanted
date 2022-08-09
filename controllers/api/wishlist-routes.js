@@ -1,17 +1,19 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Wishlist } = require('../../models');
+const  {Wishlist } = require('../../models');
 
 router.get('/', (req, res) => {
     Wishlist.findAll()
-        .then(dbWishlistData => res.json(dbWishlistData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+      .then(dbWishlistData => res.json(dbWishlistData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
 //may need "withAuth" middleware
-router.post('/', (req,res) => {
+
+router.post('/', (req, res) => {
     Wishlist.create({
         wishlist_name: req.body.wishlist_name,
         event: req.body.event,
@@ -26,12 +28,5 @@ router.post('/', (req,res) => {
         });
 });
 
-// Routes for wishlist
 
-router.get("/wishlist", function (req, res) {
-    res.render("wishlist", {qs: req.query});
-  });
-  
-
-  
 module.exports = router;
