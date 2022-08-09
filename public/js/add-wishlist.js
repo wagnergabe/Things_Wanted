@@ -1,26 +1,32 @@
-async function newFormHandler(event) {
+async function createWishlistHandler(event) {
     event.preventDefault();
-  
-    const title = document.querySelector('input[name="wishListName"]').value;
-    const event = document.querySelector('input[name="inputEvent"]').value;
-  
-    const response = await fetch(`/api/home-routes`, {
-      method: 'POST',
-      body: JSON.stringify({
-        title,
-        event
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      console.log(response)
-      document.location.replace('/wishlist');
-    } else {
-      alert(response.statusText);
-    }
+ 
+const wishlist_name = document.querySelector('input[name="inputWishListName"]').value;
+const event = document.querySelector('input[name="inputEvent"]').value;
+const item_name = document.querySelector('input[name="inputItemName"]').value;
+const category = document.querySelector('input[name="inputCategory"]').value;
+const url = document.querySelector('input[name="inputURL"]').value;
+
+const response = await fetch('/api/wishlist', {
+  method: 'POST',
+  body: JSON.stringify({
+    wishlist_name,
+    event,
+    item_name,
+    category,
+    url
+  }),
+  headers: {
+    'Content-Type': 'application/json'
   }
-  
-  document.querySelector('.wishlist').addEventListener('submit', newFormHandler);
+});
+
+if (response.ok) {
+  document.location.replace('something');
+} else {
+  alert(response.statusText)
+}
+}
+
+  document.querySelector('.gift-form').addEventListener('submit', createWishlistHandler);
+   
