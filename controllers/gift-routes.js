@@ -15,7 +15,7 @@ router.get("/", (req , res) => {
 
 //get single gift
 
-router.get('/gifts/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     Wishlist.findOne({
         where: {
             id: req.params.id
@@ -27,19 +27,13 @@ router.get('/gifts/:id', (req, res) => {
             'item_name',
             'category',
             'url',
-            
         ],
     }).then(dbWishlistData => {
         if (!dbWishlistData) {
           res.status(404).json({ message: 'No gift found with this id' });
           return;
         }
-  
-        const wishlist = dbPostData.get({ plain: true });
-  
-        res.render('single-post', {
-          wishlist,
-        });
+        res.json(dbWishlistData)
       })
       .catch(err => {
         console.log(err);
