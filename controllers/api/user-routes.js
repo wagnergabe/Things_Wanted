@@ -75,20 +75,6 @@ router.post('/logout', (req, res) => {
   }
 });
 
-//Save a new list
-
-router.post("/api/wishlist", function (req, res) {
-  db.Wishlist.create({
-    wishlist_name: req.body.wishlist_name,
-    event: req.body.event,
-    item_name: req.body.item_name,
-    category: req.body.category,
-    url: req.body.url
-  }).then(function (data) {
-    res.json(data);
-  })
-})
-  
 
 
 module.exports = router;

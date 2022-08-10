@@ -1,54 +1,29 @@
-<article class = 'post'>
-    <form class="wishList">
-        <div class="form-row">
-            <div class="col-md-6">
-                <label id = "inputWishListName">Wishlist Name:</label>
-                <input type="text" class="form-control" id="wishListName" name="wishListName" placeholder="Ex: My Birthday Wishlist" />
+{{!-- <section class = 'post'>
+    <form class="wishList-form"> --}}
+        <section>
+        <form class="gift-form">
+            <div>
+                <label for = "inputWishListName">Wishlist Name:</label>
+                <input type="text" id="inputWishListName" name="inputWishListName" placeholder="Ex: My Birthday Wishlist" />
             </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
+            <div>
                 <label for="inputEvent">Event:</label>
-                <select id="inputEvent" class="form-row" name="inputEvent">
-                    <option selected></option>
-                    <option>Birthday</option>
-                    <option>Wedding</option>
-                    <option>New Home</option>
-                    <option>Anniversary</option>
-                    <option>Graduation</option>
-                </select>
+                <input type="text" id="inputEvent" name="inputEvent"> 
             </div>
-            <div class="col-md-8">
-                <label for="inputItemName">Item Name:</label>
-                <input type="text" class="form-control" id="itemName"/>
+            <div>
+                <label for = "inputItemName">Item Name:</label>
+                <input type="text" id="inputItemName" name="inputItemName">
             </div>
-        </div>
-        <div class="form-group">
-            <label for="inputCategory">Category</label>
-            <input type="text" class="form-control" id="CategoryName" />
-        </div>
-
-        <div class="form-row">
-        <div class="col-md-2">
-            <label for="URL">URL address for Item</label>
-            <input type="text" class="form-control" id="URLname" />
-        </div>
-
-        <button type="submit" id="addItem" class="btn">Add Another Item</button>
-        <br>
-        <hr>
-        <div class="comments">
-            <h5>Additional comments: sizes, colors, alternatives, etc:</h5>
-            <input type="text" class ="form-control" id="commentName"/>
-      </div>
-        <br>
-        <hr>
-        </div>
-        <button type ="submit" id = "wish-form" class ="btn">
-            Save Gift!
-        </button>
+            <div>
+                <label for ="inputCategory">Category:</label>
+                <input type="text" id ="inputCategory" name="inputCategory">
+            </div>
+            <div>
+                <label for ="inputURL">URL:</label>
+                <input type ="text" id ="inputURL" name="inputURL"> 
+            </div>
+            <button type="submit" class="btn">Create</button>
         </form>
-</div>
+        </section>
 
-<script src ="js/add-wishlist.js"></script>
+<script src ="/javascript/add-wishlist.js"></script>

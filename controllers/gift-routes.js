@@ -1,35 +1,21 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const  { Wishlist } = require('../../models');
+const sequelize = require('../config/connection');
+const { User, Wishlist} = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get("/", (req , res) => {
     Wishlist.findAll()
-      .then(dbWishlistData => res.json(dbWishlistData))
-      .catch(err => {
+    .then(dbWishlistData => res.json(dbWishlistData))
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
-      });
-  });
-
-//may need "withAuth" middleware
-
-router.post('/', (req, res) => {
-    Wishlist.create({
-        wishlist_name: req.body.wishlist_name,
-        event: req.body.event,
-        item_name: req.body.item_name,
-        category: req.body.category,
-        url: req.body.url
     })
-        .then(dbWishlistData => res.json(dbWishlistData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+    res.render("gifts")
+})
 
+//get single gift
 
-router.get('/wishlist/:id', (req, res) => {
+router.get('/gifts/:id', (req, res) => {
     Wishlist.findOne({
         where: {
             id: req.params.id
@@ -40,8 +26,7 @@ router.get('/wishlist/:id', (req, res) => {
             'event',
             'item_name',
             'category',
-            'url',
-            
+            'url'
         ],
     }).then(dbWishlistData => {
         if (!dbWishlistData) {
