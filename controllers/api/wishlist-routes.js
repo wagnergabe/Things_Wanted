@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const  {Wishlist } = require('../../models');
+const  { Wishlist } = require('../../models');
 
 router.get('/', (req, res) => {
     Wishlist.findAll()
@@ -24,9 +24,41 @@ router.post('/', (req, res) => {
         .then(dbWishlistData => res.json(dbWishlistData))
         .catch(err => {
             console.log(err);
-            res.status(400).json(err);
+            res.status(500).json(err);
         });
 });
 
+
+router.get('/wishlist/:id', (req, res) => {
+    Wishlist.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'wishlist_name',
+            'event',
+            'item_name',
+            'category',
+            'url',
+            
+        ],
+    }).then(dbWishlistData => {
+        if (!dbWishlistData) {
+          res.status(404).json({ message: 'No gift found with this id' });
+          return;
+        }
+  
+        const wishlist = dbPostData.get({ plain: true });
+  
+        res.render('single-post', {
+          wishlist,
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
 module.exports = router;

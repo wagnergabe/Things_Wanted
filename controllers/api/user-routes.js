@@ -4,28 +4,26 @@ const { User, Wishlist } = require('../../models');
 const db = require("../../models")
 
 // CREATE new user
-
-router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
-  })
-    .then(dbUserData => {
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-  
-        res.json(dbUserData);
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+router.post('/', async (req, res) => {
+  try {
+    const dbUserData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
     });
+
+    // Set up sessions with a 'loggedIn' variable set to `true`
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(dbUserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
+
 // Login
 router.post('/login', async (req, res) => {
   try {
@@ -77,20 +75,6 @@ router.post('/logout', (req, res) => {
   }
 });
 
-//Save a new list
-
-router.post("/api/wishlist", function (req, res) {
-  db.Wishlist.create({
-    wishlist_name: req.body.wishlist_name,
-    event: req.body.event,
-    item_name: req.body.item_name,
-    category: req.body.category,
-    url: req.body.url
-  }).then(function (data) {
-    res.json(data);
-  })
-})
-  
 
 
 module.exports = router;
