@@ -57,6 +57,27 @@ router.delete('/:id', (req, res) => {
       });
   });
 
+  router.put('/:id', (req, res) => {
+    Wishlist.update(
+        {
+            wishlist_name: req.body.wishlist_name,
+            event_name: req.body.event_name,
+            item_name: req.body.item_name,
+            category: req.body.category,
+            url: req.body.url
+        },
+        {
+            where: {
+                id: req.params.id,
+            },
+        }).then ((dbWishlistData) => res.json(dbWishlistData))
+           .catch((err) => {
+            console.log(err);
+            res.status(500).json(err)
+           })
+  });
+
+
 
 
 module.exports = router;
