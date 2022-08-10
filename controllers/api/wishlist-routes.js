@@ -14,9 +14,11 @@ router.get('/', (req, res) => {
 //may need "withAuth" middleware
 
 router.post('/', (req, res) => {
+  console.log("body is:", req.body)
     Wishlist.create({
+
         wishlist_name: req.body.wishlist_name,
-        event: req.body.event,
+        event_name: req.body.event_name,
         item_name: req.body.item_name,
         category: req.body.category,
         url: req.body.url
