@@ -23,10 +23,11 @@ router.get('/gifts/:id', (req, res) => {
         attributes: [
             'id',
             'wishlist_name',
-            'event',
+            'event_name',
             'item_name',
             'category',
-            'url'
+            'url',
+            
         ],
     }).then(dbWishlistData => {
         if (!dbWishlistData) {
