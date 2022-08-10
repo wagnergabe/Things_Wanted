@@ -13,9 +13,9 @@ Wishlist.init(
     },
     wishlist_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    event: {
+    event_name: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
@@ -34,7 +34,7 @@ Wishlist.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "wishlist",
+    modelName: 'wishlist',
   }
 );
 

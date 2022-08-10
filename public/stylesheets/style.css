@@ -2,3 +2,10 @@
     box-sizing: border-box;
   }
   
+.post {
+  color: blue;
+}
+
+#wishListName {
+  color: blue;
+}
