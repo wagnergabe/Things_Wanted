@@ -1,1 +1,15 @@
-test
+
+<ol class="post-list">
+  {{#each posts}}
+  <li>
+    <article class="post">
+wishlist id# {{id}} <br>
+<h3>{{wishlist_name}}</h3>
+Event: {{event_name}}<br>
+Item: {{item_name}}<br>
+Category: {{category}}<br>
+<a href="{{url}}">link</a>
+    </article>
+  </li>
+  {{/each}}
+</ol>

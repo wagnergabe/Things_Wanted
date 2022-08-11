@@ -9,6 +9,39 @@
 </head>
 
 <body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <h1>Things Wanted</h1>
+      </h1>
+      <nav>
+        {{#if loggedIn}}
+        <a href="/homepage">homepage</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+        <a href ="/">Home</a>
+        <a href="/wishlist">Wishlist</a>
+        <a href="gifts">Gifts</a>
+      </nav>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      Created by Group 2
+    </footer>
+  </div>
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
+
+{{!-- <body>
   <header>
     <h1>Things Wanted</h1>
   </header>
@@ -31,9 +64,11 @@
       {{{body}}}
     </div>
   </main>
+
+
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 
-</html>
+</html>  --}}
