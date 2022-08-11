@@ -1,7 +1,8 @@
 async function createWishlistHandler(event) {
     event.preventDefault();
  
-
+const username = window.location.toString().split('/')[
+  window.location.toString().split('/').length - 1]
 const wishlist_name = document.querySelector('input[name="inputWishListName"]').value;
 const event_name = document.querySelector('input[name="inputEvent"]').value;
 const item_name = document.querySelector('input[name="inputItemName"]').value;
@@ -18,7 +19,8 @@ const response = await fetch('api/wishlist', {
     event_name,
     item_name,
     category,
-    url
+    url,
+    username
   }),
   headers: {
     'Content-Type': 'application/json'

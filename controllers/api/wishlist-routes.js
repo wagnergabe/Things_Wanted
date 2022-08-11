@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const  { Wishlist } = require('../../models');
+const  { Wishlist, User } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 
@@ -9,7 +9,7 @@ const withAuth = require('../../utils/auth')
 
 router.post('/', withAuth, (req, res) => {
     Wishlist.create({
-        // user_id: req.session.username,
+        username: req.session.username,
         wishlist_name: req.body.wishlist_name,
         event_name: req.body.event_name,
         item_name: req.body.item_name,
