@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Wishlist} = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Wishlist.findAll({
       attributes: [
         'id',
