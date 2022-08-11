@@ -78,7 +78,7 @@ router.delete('/:id', withAuth, (req, res) => {
       }
     })
       .then(dbWishlistData => {
-        if (dbWishlistData) {
+        if (!dbWishlistData) {
           res.status(404).json({ message: 'No post found with this id' });
           return;
         }
