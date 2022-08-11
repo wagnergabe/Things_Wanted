@@ -13,7 +13,7 @@ Wishlist.init(
     },
     wishlist_name: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     event_name: {
       type: DataTypes.TEXT,
