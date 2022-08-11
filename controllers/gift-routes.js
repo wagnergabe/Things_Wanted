@@ -5,6 +5,9 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Wishlist.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
       attributes: [
         'id',
         'wishlist_name',
@@ -13,10 +16,16 @@ router.get('/', withAuth, (req, res) => {
         "category",
         "url",
       ],
+      indlude: [
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('gifts', {posts} );
+        res.render('gifts', {posts, loggedIn: true} );
       })
       .catch(err => {
         console.log(err);

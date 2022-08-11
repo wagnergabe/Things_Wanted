@@ -1,6 +1,7 @@
 
 <ol class="post-list">
   {{#each posts}}
+<<<<<<< Updated upstream
   <li>
     <article class="post">
 wishlist id# {{id}} <br>
@@ -11,5 +12,24 @@ Category: {{category}}<br>
 <a href="{{url}}">link</a>
     </article>
   </li>
+=======
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p>{{user.username}}</p>
+        <p class="title is-4">{{wishlist_name}}</p>
+        <p class="subtitle is-6">Event: {{event_name}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      Item: {{item_name}}<br>
+      Category: {{category}}<br>
+      <a href="{{url}}">link</a>
+    </div>
+  </div>
+</div>
+>>>>>>> Stashed changes
   {{/each}}
 </ol>

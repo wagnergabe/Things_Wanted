@@ -4,7 +4,20 @@ const { Wishlist, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Wishlist.findAll()
+    Wishlist.findAll({
+      attributes: [
+        'id',
+        'wishlist_name',
+        'event_name',
+        'item_name',
+        'category',
+        'url',
+      ],
+      include: [{
+        model: User,
+        attributes: ['username']
+    }]
+    })
       .then(dbWishlistData => res.json(dbWishlistData))
       .catch(err => {
         console.log(err);
