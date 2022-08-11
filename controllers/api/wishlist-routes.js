@@ -5,11 +5,11 @@ const withAuth = require('../../utils/auth')
 
 
 //create wishlist 
-///may need "withAuth" middleware
+
 
 router.post('/', withAuth, (req, res) => {
     Wishlist.create({
-        username: req.session.username,
+        username: req.session.user_id,
         wishlist_name: req.body.wishlist_name,
         event_name: req.body.event_name,
         item_name: req.body.item_name,

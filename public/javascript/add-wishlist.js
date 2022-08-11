@@ -9,18 +9,15 @@ const item_name = document.querySelector('input[name="inputItemName"]').value;
 const category = document.querySelector('input[name="inputCategory"]').value;
 const url = document.querySelector('input[name="inputURL"]').value;
 
-
-
-
 const response = await fetch('api/wishlist', {
   method: 'POST',
   body: JSON.stringify({
+    username,
     wishlist_name,
     event_name,
     item_name,
     category,
     url,
-    username
   }),
   headers: {
     'Content-Type': 'application/json'

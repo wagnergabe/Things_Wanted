@@ -6,7 +6,6 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, (req, res) => {
     Wishlist.findAll({
       attributes: [
-        'username',
         'id',
         'wishlist_name',
         'event_name',
