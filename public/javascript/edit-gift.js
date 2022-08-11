@@ -24,7 +24,7 @@ async function editFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/wishlist/');
+      document.location.replace('/gifts/');
     } else {
       alert(response.statusText);
     }
