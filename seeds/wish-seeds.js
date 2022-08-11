@@ -2,6 +2,7 @@ const { Wishlist } = require("../models");
 
 const wishlistData = [
   {
+    
     wishlist_name: "wishlist1",
     event_name: "Wedding",
     item_name: "Just Married Candle",
@@ -13,7 +14,7 @@ const wishlistData = [
     event_name: "Birthday",
     item_name: "Playstation 6",
     category: "Home",
-    url: "sony.com"
+    url: "sony.com",
   }
 ];
 
