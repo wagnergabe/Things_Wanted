@@ -24,7 +24,7 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
-//get single gift
+//get single gift//
 
 router.get('/:id', (req, res) => {
     Wishlist.findOne({
