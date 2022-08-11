@@ -1,11 +1,89 @@
-* {
-    box-sizing: border-box;
-  }
-  
-.post {
-  color: blue;
+/* Global Styling */
+:root {
+  --primary-color: #BDFFFD;
+  --secondary-color: #FFCF67;
+  --tertiary-color: #5E6973;
 }
 
-#wishListName {
-  color: blue;
+
+* {
+  box-sizing: border-box;
 }
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Andale Mono', monospace;
+  background-color: #BDFFFD;
+}
+
+h1 {
+  font-family: 'Andale Mono', monospace;
+  color: var(--secondary-color);
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #5E6973;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+
+/* Header */
+
+header {
+  margin: auto;
+  justify-content: center;  
+  display: flex;
+  align-items: center;
+}  
+
+
+
+header h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+/*nav */
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* Home & Login button */
+nav a {
+  border: 2px solid var(--tertiary-color);
+  background-color: var(--secondary-color);
+  margin-right: 25px;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color .1s;
+}
+
+a:hover {
+  color: #3486eb;
+}
+
+button:hover {
+  background-color: #3486eb;
+}
+
+main {
+  margin-top: 25px;
+  flex: 1;
+}
+
+main aside {
+  margin-top: 50px;
+}
+
+
