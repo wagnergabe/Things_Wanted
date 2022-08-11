@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Wishlist} = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Wishlist.findAll({
       attributes: [
         'id',
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
       });
   });
 
-//get single gift
+//get single gift//
 
 router.get('/:id', (req, res) => {
     Wishlist.findOne({
@@ -51,5 +51,33 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+  router.get('/edit/:id', withAuth, (req, res) => {
+    Wishlist.findByPk(req.params.id, {
+      attributes: [
+        'id',
+        'wishlist_name',
+        'event_name',
+        'item_name',
+        'category',
+        'url'
+      ]
+    }).then (dbPostData => {
+      if (dbPostData) {
+        const post = dbPostData.get({ plain: true });
+        
+        res.render('edit-gift', {
+          post,
+          loggedIn: true
+        });
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
+  
 
 module.exports = router;

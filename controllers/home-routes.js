@@ -4,9 +4,9 @@ const sequelize = require('../config/connection')
 const withAuth = require('../utils/auth');
 
 
-router.get('/',  (req, res) => {
+router.get('/', withAuth,  (req, res) => {
   res.render('homepage', {
-    // loggedIn: req.session.loggedIn,
+   loggedIn: req.session.loggedIn,
   })
 })
 

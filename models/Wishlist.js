@@ -29,6 +29,13 @@ Wishlist.init(
     url: {
       type: DataTypes.TEXT,
     },
+    username: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
