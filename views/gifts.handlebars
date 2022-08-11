@@ -1,16 +1,7 @@
 
 <ol class="post-list">
   {{#each posts}}
-  <li>
-    <article class="post">
-wishlist id# {{id}} <br>
-<h3>{{wishlist_name}}</h3>
-Event: {{event_name}}<br>
-Item: {{item_name}}<br>
-Category: {{category}}<br>
-<a href="{{url}}">link</a>
-    </article>
-  </li>
+
 <div class="card">
   <div class="card-content">
     <div class="media">
@@ -18,9 +9,6 @@ Category: {{category}}<br>
         <p>{{username}}</p>
         <p class="title is-4">{{wishlist_name}}</p>
         <p class="subtitle is-6">Event: {{event_name}}</p>
-      </div>
-    </div>
-
     <div class="content">
       Item: {{item_name}}<br>
       Category: {{category}}<br>
@@ -33,4 +21,3 @@ Category: {{category}}<br>
   {{/each}}
 </ol>
 
-<script src = "/javascript/edit-gift.js"></script>
