@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const  { Wishlist } = require('../../models');
+const withAuth = require('../../utils/auth')
+
 
 //create wishlist 
 ///may need "withAuth" middleware

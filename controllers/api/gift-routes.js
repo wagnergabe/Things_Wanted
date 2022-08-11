@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Wishlist, User } = require('../../models');
-
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Wishlist.findAll()
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
       });
   });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Wishlist.destroy({
       where: {
         id: req.params.id
@@ -57,7 +57,7 @@ router.delete('/:id', (req, res) => {
       });
   });
 
-  router.put('/:id', (req, res) => {
+  router.put('/:id', withAuth, (req, res) => {
     Wishlist.update(
         {
             wishlist_name: req.body.wishlist_name,

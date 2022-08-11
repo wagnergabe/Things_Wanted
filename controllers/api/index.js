@@ -6,6 +6,7 @@ const giftRoutes = require('./gift-routes');
 
 
 // router.use('/users', userRoutes);
+router.use('/users', userRoutes)
 router.use('/wishlist', wishlistRoutes);
 router.use('/gifts', giftRoutes);
 

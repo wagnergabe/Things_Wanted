@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Wishlist } = require('../models');
-
-router.get('/', (req, res) => {
-    res.render('wishlist')
+const { Wishlist } = require('../models');
+const withAuth = require('../utils/auth')
+router.get('/', withAuth, (req, res) => {
+    res.render('wishlist', {loggedIn: true })
 });
 
 module.exports = router;
