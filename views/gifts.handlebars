@@ -1,7 +1,6 @@
 
 <ol class="post-list">
   {{#each posts}}
-<<<<<<< Updated upstream
   <li>
     <article class="post">
 wishlist id# {{id}} <br>
@@ -12,12 +11,11 @@ Category: {{category}}<br>
 <a href="{{url}}">link</a>
     </article>
   </li>
-=======
 <div class="card">
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p>{{user.username}}</p>
+        <p>{{username}}</p>
         <p class="title is-4">{{wishlist_name}}</p>
         <p class="subtitle is-6">Event: {{event_name}}</p>
       </div>
@@ -27,9 +25,12 @@ Category: {{category}}<br>
       Item: {{item_name}}<br>
       Category: {{category}}<br>
       <a href="{{url}}">link</a>
+      <a href="/gifts/edit/{{id}}" class="edit-link">Edit gift</a>
     </div>
   </div>
 </div>
->>>>>>> Stashed changes
+
   {{/each}}
 </ol>
+
+<script src = "/javascript/edit-gift.js"></script>

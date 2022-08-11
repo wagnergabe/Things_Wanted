@@ -1,4 +1,15 @@
-test
+
+<ul class="wishlist-list">
+    {{#each wishlist as |wishlist|}}
+    <li>
+        {{> wishlist-wishlist }}
+    </li>
+    {{/each}}
+</ul>
+
+<div>
+<center>Create a wishlist with us...</center>
+</div>
 
 <ol class="post-list">
   {{#each posts as |post|}}
@@ -8,3 +19,4 @@ test
   </li>
   {{/each}}
 </ol>
+

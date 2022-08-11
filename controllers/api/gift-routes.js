@@ -51,6 +51,26 @@ router.get('/:id', (req, res) => {
       });
   });
 
+router.put('/:id', withAuth, (req, res) => {
+  Wishlist.update(
+    {
+        wishlist_name: req.body.wishlist_name,
+        event_name: req.body.event_name,
+        item_name: req.body.item_name,
+        category: req.body.category,
+        url: req.body.url
+    },
+    {
+        where: {
+            id: req.params.id,
+        },
+    }).then ((dbWishlistData) => res.json(dbWishlistData))
+       .catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+       })
+    });
+
 router.delete('/:id', withAuth, (req, res) => {
     Wishlist.destroy({
       where: {
@@ -69,28 +89,6 @@ router.delete('/:id', withAuth, (req, res) => {
         res.status(500).json(err);
       });
   });
-
-  router.put('/:id', withAuth, (req, res) => {
-    Wishlist.update(
-        {
-            wishlist_name: req.body.wishlist_name,
-            event_name: req.body.event_name,
-            item_name: req.body.item_name,
-            category: req.body.category,
-            url: req.body.url
-        },
-        {
-            where: {
-                id: req.params.id,
-            },
-        }).then ((dbWishlistData) => res.json(dbWishlistData))
-           .catch((err) => {
-            console.log(err);
-            res.status(500).json(err)
-           })
-  });
-
-
 
 
 module.exports = router;

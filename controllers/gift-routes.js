@@ -5,9 +5,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Wishlist.findAll({
-      where: {
-        user_id: req.session.user_id
-      },
       attributes: [
         'id',
         'wishlist_name',
@@ -16,16 +13,10 @@ router.get('/', withAuth, (req, res) => {
         "category",
         "url",
       ],
-      indlude: [
-        {
-          model: User,
-          attributes: ['username']
-        }
-      ]
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('gifts', {posts, loggedIn: true} );
+        res.render('gifts', {posts} );
       })
       .catch(err => {
         console.log(err);
@@ -60,5 +51,33 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+  router.get('/edit/:id', withAuth, (req, res) => {
+    Wishlist.findByPk(req.params.id, {
+      attributes: [
+        'id',
+        'wishlist_name',
+        'event_name',
+        'item_name',
+        'category',
+        'url'
+      ]
+    }).then (dbPostData => {
+      if (dbPostData) {
+        const post = dbPostData.get({ plain: true });
+        
+        res.render('edit-gift', {
+          post,
+          loggedIn: true
+        });
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
+  
 
 module.exports = router;
