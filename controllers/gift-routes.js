@@ -13,6 +13,12 @@ router.get('/', withAuth, (req, res) => {
         "category",
         "url",
       ],
+      include: [
+        {
+          model: User,
+          attributes:['username']
+        }
+      ]
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
