@@ -10,7 +10,7 @@ async function deleteFormHandler(event) {
   
     if (response.ok) {
       document.location.replace('/gifts/');
-      alert("deleted")
+      alert("Gift Deleted")
     } else {
       alert(response.statusText);
     }

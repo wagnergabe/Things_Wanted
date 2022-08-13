@@ -65,7 +65,7 @@
   </div>
 </nav>
 
-{{!-- We may not need sign-up with the log-in button, unless we want to create an addtional page (one for login, one for signup) --}}
+{{!-- We may not need the sign-up button with the log-in button, unless we want to create addtional pages (one for login, one for signup) --}}
 
     </header>
     <main>
@@ -75,43 +75,9 @@
       <br> &#169; 2022 by Shaytana Thomas, Tricia Nghiem, Gabe Wagner, & Larry Sorto
     </footer>
   </div>
-  
-  {{#if loggedIn}}
+
   <script src="/javascript/logout.js"></script>
-  {{/if}}
 </body>
 
 <footer></footer>
 </html>
-
-{{!-- <body>
-  <header>
-    <h1>Things Wanted</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <a href="/wishlist">Wishlists</a>
-    </aside>
-    <aside>
-      <a href="/gifts">Gift List</a>
-    </aside>
-    <div class="wishlist">
-      {{{body}}}
-    </div>
-  </main>
-
-
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
-
-</html>  --}}
