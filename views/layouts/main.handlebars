@@ -46,14 +46,15 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
           </a>
           {{#if loggedIn}}
-          <a href="/login" id = 'logout' class="button is-light">
-            Log Out
+        
+          <a href="/login" id = 'logout' class="button is-primary">
+          <strong>Log Out</strong>
           </a>
           {{else}}
+            <a class="button is-primary">
+            <strong>Sign up</strong> 
            <a href="/login" class="button is-light">
             Log in
           </a>
@@ -64,6 +65,7 @@
   </div>
 </nav>
 
+{{!-- We may not need sign-up with the log-in button, unless we want to create an addtional page (one for login, one for signup) --}}
 
     </header>
     <main>
