@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
         id: req.params.id
       },
       attributes: [
-        'username',
         'id',
         'wishlist_name',
         'event_name',
@@ -20,6 +19,8 @@ router.get('/', (req, res) => {
       include: [{
         model: User,
         attributes: ['username']
+        //this is create a new table with the each model's attributes. taking all the columns of the Wishlist model, and adding them with the single Username of the User model
+        
     }]
     })
       .then(dbWishlistData => res.json(dbWishlistData))

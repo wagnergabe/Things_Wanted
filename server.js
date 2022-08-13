@@ -25,7 +25,11 @@ const sess = {
   
   const hbs = exphbs.create({ helpers });
   
-  app.engine('handlebars', hbs.engine);
+  app.engine('handlebars', exphbs.engine({
+    layoutsDir: 'views/Layouts', 
+    defaultLayout: 'main', 
+    extname: '.handlebars'
+  }));
   app.set('view engine', 'handlebars');
   
   app.use(express.json());
@@ -38,3 +42,5 @@ const sess = {
   sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
   });
+
+  //

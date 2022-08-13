@@ -1,28 +1,6 @@
-
-
 <center><h1 style="font-size:2vw">Find a List</h1></center>
 <ol class="post-list">
-  {{#each posts}}
-
-<div class="card">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">{{wishlist_name}}</p>
-        <p class="subtitle is-6">Event: {{event_name}}</p>
-      </div>
-    </div>
-
-    <div class="content">
-      Item: {{item_name}}<br>
-      Category: {{category}}<br>
-      <a href="{{url}}">link</a>
-    </div>
-    <div class = "edit">
-       <a href="/gifts/edit/{{id}}" class="edit-link">Edit gift</a>
-    </div>
-  </div>
-</div>
-  {{/each}}
+{{#each posts}}
+{{> giftformat}}
+{{/each}}
 </ol>
-
