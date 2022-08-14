@@ -49,3 +49,5 @@ const loginFormHandler = async (event) => {
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
   
+
+  // Source: UofM Bootcamp module 14  --Gabe 

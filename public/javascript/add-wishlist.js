@@ -1,8 +1,8 @@
 async function createWishlistHandler(event) {
     event.preventDefault();
  
-const username = window.location.toString().split('/')[
-  window.location.toString().split('/').length - 1]
+const user_id = window.location.toString().split('/')[
+  window.location.toString().split('/').length - 1] //-- Source for this code: UofM Bootcamp module 14  --Gabe 
 const wishlist_name = document.querySelector('input[name="inputWishListName"]').value;
 const event_name = document.querySelector('input[name="inputEvent"]').value;
 const item_name = document.querySelector('input[name="inputItemName"]').value;
@@ -12,7 +12,7 @@ const url = document.querySelector('input[name="inputURL"]').value;
 const response = await fetch('api/wishlist', {
   method: 'POST',
   body: JSON.stringify({
-    username,
+    user_id,
     wishlist_name,
     event_name,
     item_name,
@@ -25,11 +25,9 @@ const response = await fetch('api/wishlist', {
 });
 
 if (response.ok) {
-  console.log(response)
   document.location.replace('/gifts');
 } else {
   alert(response.statusText)
-  console.log(response)
 }
 }
 
