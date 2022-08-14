@@ -2,7 +2,7 @@ async function createWishlistHandler(event) {
     event.preventDefault();
  
 const user_id = window.location.toString().split('/')[
-  window.location.toString().split('/').length - 1]
+  window.location.toString().split('/').length - 1] //-- Source for this code: UofM Bootcamp module 14  --Gabe 
 const wishlist_name = document.querySelector('input[name="inputWishListName"]').value;
 const event_name = document.querySelector('input[name="inputEvent"]').value;
 const item_name = document.querySelector('input[name="inputItemName"]').value;
