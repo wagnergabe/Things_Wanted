@@ -1,0 +1,144 @@
+/* Global Styling */
+:root {
+  --primary-color: #BDFFFD;
+  --secondary-color: #6ABEA7;
+  --tertiary-color: #5E6973;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  padding: 20px;
+  margin: 20px;
+  font-family: 'Lato', sans-serif;
+  background-color: #FFFF;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  color: var(--secondary-color);
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #5E6973;
+  font-weight: bold;
+  transition: color 0.1s;
+  font-family: 'Lato', sans-serif;
+}
+
+
+/* Header */
+
+header {
+  margin: auto;
+  justify-content: center;  
+  display: flex;
+  align-items: center;
+}  
+
+
+
+header h1 {
+  font-weight: bold;
+  font-size: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+
+/*nav */
+nav {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Home & Login button */
+nav a {
+  margin-right: 25px;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color .1s;
+  font-family: 'Lato', sans-serif;
+}
+
+a:hover {
+  color: #3486eb;
+}
+
+button:hover {
+  background-color: #3486eb;
+}
+
+main {
+  margin-top: 25px;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+  flex: 1;
+}
+
+main aside {
+  margin-top: 50px;
+}
+
+
+button {
+  background-color: #225ca3;
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #225ca3;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color .1s;
+  margin-left: 16px;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: #3486eb;
+}
+
+.delete-post-btn {
+  background-color: #d41414;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff643d;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #9FFFF5;
+  text-align: center;
+}
+.edit-post-form {
+  text-decoration: solid;
+  margin: 8px;
+}

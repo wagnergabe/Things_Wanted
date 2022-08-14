@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Things Wanted</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+      <a href="/">
+     <img src="https://i.ibb.co/cTRb0Qs/Screen-Shot-2022-08-11-at-12-45-27-PM.png" width="250">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/" class="navbar-item">
+        Home
+      </a>
+
+      <a href="/wishlist" class="navbar-item">
+        Create a Wishlist
+      </a>
+
+       <a href="/gifts" class="navbar-item">
+        Find a List 
+        </a>
+        
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          </a>
+          {{#if loggedIn}}
+        
+          <a href="/login" id = 'logout' class="button is-primary">
+          <strong>Log Out</strong>
+          </a>
+          {{else}}
+            <a class="button is-primary">
+            <strong>Sign up</strong> 
+           <a href="/login" class="button is-light">
+            Log in
+          </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{!-- We may not need the sign-up button with the log-in button, unless we want to create addtional pages (one for login, one for signup) --}}
+
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      <br> &#169; 2022 by Shaytana Thomas, Tricia Nghiem, Gabe Wagner, & Larry Sorto
+    </footer>
+  </div>
+
+  <script src="/javascript/logout.js"></script>
+</body>
+
+<footer></footer>
+</html>
