@@ -4,9 +4,9 @@ require('dotenv').config();
 
 // create connection to our db
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
+  process.env.DB_NAME || wishlist_db,
+  process.env.DB_USER || "root",
+  process.env.DB_PASSWORD || "test",
   {
     host: 'localhost',
     dialect: 'mysql',
