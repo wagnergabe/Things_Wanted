@@ -3,12 +3,10 @@ const Wishlist = require("./Wishlist");
 const Item = require ("./Item");
 
 User.hasMany(Wishlist, {
-    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
 Wishlist.belongsTo(User, {
-    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 })
 
