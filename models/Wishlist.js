@@ -29,6 +29,8 @@ Wishlist.init(
     url: {
       type: DataTypes.TEXT,
     },
+  },
+  {
     sequelize,
     freezeTableName: true,
     underscored: true,
