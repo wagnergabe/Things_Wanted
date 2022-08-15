@@ -1,33 +1,51 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
+<center> 
+  <h1 style="font-size:3vw">Need to create a wishlist?</h1>
+    <br><b>We got you!</b> Create a list with us for your next event & share with it with your family and friends. 
+    <br>Sign in or create an account to get started!
+    <br>
+</center>
+<div class="columns" style="padding: 70px;">
+  <div class="column is-half">
+    <center><strong>Sign In</strong></center>
+    <form class="login-form">
+      <div>
+        <label for="email-login" class="label">email:</label>
+        <input type="text" id="email-login" class="input"/>
+      </div>
+      <div>
+        <label for="password-login" class="label">password:</label>
+        <input type="password" id="password-login" class="input"/>
+      </div>
+      <div>
+        <center>
+    <br><button class="button is-primary is-light" type="submit">login</button>
+    </center>
+      </div>
+  </form>
   </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
 
+<div class="column is-half" style="background-color:#ededed;">
+  <center><strong>Create an Account</strong></center>
 <form class="signup-form">
   <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
+    <label for="username-signup" class="label">username:</label>
+    <input type="text" id="username-signup" class="input" />
   </div>
   <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
+    <label for="email-signup" class="label">email:</label>
+    <input type="text" id="email-signup" class="input"/>
   </div>
   <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
+    <label for="password-signup" class="label">password:</label>
+    <input type="password" id="password-signup" class="input"/>
   </div>
   <div>
-    <button type="submit">signup</button>
+    <br>
+    <center><button class="button is-primary" type="submit">signup</button></center>
   </div>
 </form>
+</div>
+</div>
+
 
 <script src="/javascript/login.js"></script>
