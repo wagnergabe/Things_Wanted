@@ -5,7 +5,7 @@
 This is an application that helps users create wishlist and find other user's wishlist. Users are able to input urls, titles, and other information to ensure that their lists are cohesive and findable. Users can create multiple list associated to their accounts.
 
 
-## Techonologies Used
+## Technologies Used
 <div>
 	<code><img height="25" src="https://user-images.githubusercontent.com/25181517/117447535-f00a3a00-af3d-11eb-89bf-45aaf56dbaf1.png" alt="HTML" title="HTML" /></code>
 	<code><img height="25" src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS" /></code>
